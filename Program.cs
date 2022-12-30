@@ -16,7 +16,21 @@ namespace BinarySearchTree_001
 
         public Node( string i, Node l, Node r)
         {
+            info = i;
+            leftchild = l;
+            rightchild = r;
+        }
+    }
 
+        /*A node class consists os three things, the information,references to the
+         right child,and references to the left child*/
+
+    class BinaryTree
+    {
+        public Node ROOT;
+        public BinaryTree()
+        {
+            ROOT = null; /* Initializing ROOT to null*/
         }
     }
     internal class Program
