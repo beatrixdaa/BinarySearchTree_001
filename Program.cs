@@ -65,8 +65,31 @@ namespace BinarySearchTree_001
         /*This function searches the currentNode of the specified Node as 
          well as the currentNode of its parent*/
         currentNode = ROOT;
-        P
+        parent = null;
+        while((currentNode !=null) &&(currentNode.info !=element))
+        {
+            parent = currentNode;
+            if (string.Compare(element, currentNode.info) < 0)
+                currentNode = currentNode.leftchild;
+            else
+                currentNode = currentNode.rightchild;
+        }
     }
+    public void inorder(Node ptr)
+    {
+        if (ROOT == null)
+        {
+            Console.WriteLine("Tree is empty");
+            return;
+        }
+        if (ptr != null)
+        {
+            inorder(ptr.leftchild);
+            Console.Write(ptr.info + " ");
+            inorder(ptr.rightchild);
+        }
+    }
+    public void preorder(Node ptr)
     internal class Program
     {
         static void Main(string[] args)
