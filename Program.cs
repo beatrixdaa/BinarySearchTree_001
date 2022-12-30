@@ -22,8 +22,8 @@ namespace BinarySearchTree_001
         }
     }
 
-        /*A node class consists os three things, the information,references to the
-         right child,and references to the left child*/
+    /*A node class consists os three things, the information,references to the
+     right child,and references to the left child*/
 
     class BinaryTree
     {
@@ -36,16 +36,36 @@ namespace BinarySearchTree_001
         {
             Node tmp, parent = null, currentNode = null;
             Search(element, ref parent, ref currentNode);
-            if(currentNode !=null) /* Check if the node to be inserted already inserted or not */
+            if (currentNode != null) /* Check if the node to be inserted already inserted or not */
             {
                 Console.WriteLine("Duplicate words not allowed");
                 return;
             }
             else /* If the specified node is not perfect*/
             {
-
+                tmp = new Node(element, null, null); /* create a Node*/
+                if (parent == null) /* If the tree is empty*/
+                {
+                    ROOT = tmp;
+                }
+                else if (string.Compare(element, parent.info) < 0)
+                {
+                    parent.leftchild = tmp;
+                }
+                else
+                {
+                    parent.rightchild = tmp;
+                }
             }
         }
+    }
+
+    public void Search(string element,ref Node parent,ref Node currentNode)
+    {
+        /*This function searches the currentNode of the specified Node as 
+         well as the currentNode of its parent*/
+        currentNode = ROOT;
+        P
     }
     internal class Program
     {
